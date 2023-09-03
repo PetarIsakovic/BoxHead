@@ -1,0 +1,11 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+#videoBox{
+    /* display: flex;
+    justify-content: center; */
+    background-color: rgb(135, 135, 135);
+    position: relative;
+}
