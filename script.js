@@ -5,10 +5,6 @@ let videoVisibility = true;
 let detecting = true;
 let activateAll = false;
 
-// for (let i = 0; i < window.speechSynthesis.getVoices().length; i++) {
-//   console.log(i);
-//   console.log(window.speechSynthesis.getVoices()[i]);
-// }
 
 speechSynthesis.addEventListener("voiceschanged", () => {
   const voices = speechSynthesis.getVoices()
@@ -24,7 +20,6 @@ let foundObjects = [];
 console.log(allObjects);
 
 function preload() {
-  //object detector is created (ml5.js)
   detector = ml5.objectDetector('cocossd');
 }
 
@@ -39,7 +34,6 @@ function setup() {
   video.elt.addEventListener('loadeddata', function() {
     if (video.elt.readyState >= 2) {
       document.body.style.cursor = 'default';
-      //video detector starts
       detect();
     }
   });
@@ -174,19 +168,12 @@ recognition.addEventListener('result', e => {
       }
       console.log(arrayOfTranscript[i]);
       if(allObjects.includes(arrayOfTranscript[i])){
-        // console.log(arrayOfTranscript[i]);
         if(!searchingObjects.includes(arrayOfTranscript[i])){
-          // let utterance = new SpeechSynthesisUtterance("Hello world!");
-          // speechSynthesis.speak(utterance);
 
 
           let utterance = new SpeechSynthesisUtterance('I will help find your ' + arrayOfTranscript[i]);
           utterance.rate = 1;
-          // utterance.voice = speechSynthesis.getVoices()[7];
 
-          
-          
-          
           window.speechSynthesis.speak(utterance);
           
           utterance.onend = function () {
@@ -198,10 +185,8 @@ recognition.addEventListener('result', e => {
         }
       }
       else if(i == arrayOfTranscript.length-2 && allObjects.includes(arrayOfTranscript[i] + " " + arrayOfTranscript[i+1])){
-        // console.log(arrayOfTranscript[i]);
         if(!searchingObjects.includes(arrayOfTranscript[i] + " " + arrayOfTranscript[i+1])){
           let utterance = new SpeechSynthesisUtterance('I will help locate your ' + arrayOfTranscript[i] + " " + arrayOfTranscript[i+1]);
-          // utterance.voice = speechSynthesis.getVoices()[7];
           utterance.pitch = 1;
           window.speechSynthesis.speak(utterance);
           
@@ -228,16 +213,3 @@ recognition.addEventListener('end', e => {
   recognition.start();
 
 });
-
-
-/*
-Exaple of an detect object
-{
-    "label": "person",
-    "confidence": 0.8013999462127686,
-    "x": 7.126655578613281,
-    "y": 148.3782720565796,
-    "width": 617.7880859375,
-    "height": 331.60210132598877,
-}
-*/
