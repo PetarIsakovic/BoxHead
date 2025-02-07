@@ -1,3 +1,4 @@
+
 ## Inspiration
 Our inspiration for BoxHead stemmed from a desire to streamline daily life and assist in critical scenarios, like search and rescue operations.
 
@@ -22,3 +23,6 @@ Throughout this project, we learned the importance of interdisciplinary collabor
 
 ## What's next for BoxHead
 Our vision for BoxHead extends beyond just finding items. In the future, we plan to expand its capabilities, such as integration with smart home systems, navigation assistance, and even augmented reality gaming. We're excited about the possibilities and are committed to enhancing the BoxHead experience for our users.
+
+![BoxHeadVideo (2)](https://github.com/user-attachments/assets/ec7166c7-34bc-4df4-a745-f6a564eae4e2)
+
